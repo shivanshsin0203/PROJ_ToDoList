@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+      
+  <div class="box" id="heading">   
+  <% if (locals.week&&locals.m&&locals.date) { %>
+      
+      <h1><%= week%>,<%= m%> <%= date%></h1>   <% } %>
+  </div>
+  
+  <div class="box">
+  <% if(locals.value) { %>
+          <% value.forEach(element => { %>
+              <div class="item">
+                 <input type="checkbox">
+                   <p><%= element %></p>
+                  </div>
+          <% }) %>
+      <% } else { %>
+        <h1>No Task Scheduled</h1>
+      <% } %>
+       
+      <form class="item" action="/submit" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value="Friday," july="" 28="">+</button>
+      </form>
+  </div>
+        <footer>
+          Developed and Designed by ｼ S̷ H҉ Ї ℣ ₳ Ñ S̷ H҉  ｼ
+        </footer>
+</body>
+</html>
